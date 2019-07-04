@@ -1,0 +1,102 @@
+first 
+
+create a page all widget !
+
+or jese ke sara kam function me hoga islize ese inc ke folder me rkh kr req_once me function ke page me call kra denge
+
+require_once get_template_directory() .'/inc/allwidgets.php';
+
+google pr widget ke coding-->
+
+type-> wordpress register side_bar is ka code widget me paste krke intialize kradenge function ke sath 
+
+
+ register_sidebar(
+      array(
+        'name'          => 'GIFT CARD',
+        'id'            => 'free4',    // ID should be LOWERCASE  ! ! !
+        'before_widget' => 'startin bracket',
+
+        'after_widget'  => 'ending bracket',
+
+        'before_title'  => '',
+        'after_title'   => '' )
+    );
+}
+add_action('widgets_init', 'addnewwidget');
+
+add new widget hmare main function ka name he
+
+phr hm plugin install karenge 
+-> widget icon ka codex side se -> black_color_ka icon hoga.
+
+or index pr call karane ke lye --->       <?php dynamic_sidebar('free'); ?>
+id se call karainge jo id hoge wohe iske under bhe call hoge
+
+
+!____________________________________________________________________________-
+add new widget page query //
+
+<?php
+/*
+* Author Name: Ahmed
+* Theme Name : Sebian
+* All Widget Functions
+*/
+
+function addnewwidget(){
+
+  // free shipping box --- index.php
+  register_sidebar( array(
+        'name' => 'Free Shipping',
+        'id'   =>   'free',
+        'before_widget' => '<li class="col-md-3 no-padding animate fadeInLeft" data-wow-delay="0.4s">
+          <div class="benefit-item odd"> 
+          ',
+    'after_widget'  => '</div>
+                </li>',
+    'before_title'  => '',
+    'after_title'   => '',
+    ) );
+
+    register_sidebar(
+      array(
+        'name'          => 'Money Back',
+        'id'            => 'free2',    // ID should be LOWERCASE  ! ! !
+        'before_widget' => '<li class="col-md-3 no-padding animate fadeInLeft" 
+        data-wow-delay="0.6s"><div class="benefit-item even">',
+
+        'after_widget'  => '</div></li>',
+        'before_title'  => '',
+        'after_title'   => '' )
+    );
+
+    register_sidebar(
+      array(
+        'name'          => 'BEST SUPPORT',
+        'id'            => 'free3',    // ID should be LOWERCASE  ! ! !
+        'before_widget' => '<li class="col-md-3 no-padding animate fadeInRight" data-wow-delay="0.4s"><div class="benefit-item odd">',
+
+        'after_widget'  => '</div></li>',
+        'before_title'  => '',
+        'after_title'   => '' )
+    );
+
+    register_sidebar(
+      array(
+        'name'          => 'GIFT CARD',
+        'id'            => 'free4',    // ID should be LOWERCASE  ! ! !
+        'before_widget' => '<li class="col-md-3 no-padding animate fadeInRight" data-wow-delay="0.4s"><div class="benefit-item even">',
+
+        'after_widget'  => '</div></li>',
+        'before_title'  => '',
+        'after_title'   => '' )
+    );
+}
+add_action('widgets_init', 'addnewwidget');
+
+
+ ?>
+
+
+ 

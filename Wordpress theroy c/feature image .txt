@@ -1,0 +1,11 @@
+feature image ko open krne k lye
+
+
+function theme_changes(){
+	add_theme_support( 'post-thumbnails' );
+	// add_theme_support('post-thumbnails', array('slider')); 
+	// slider post type ka name he. jis posttype me thumbnail kholna hoto name likh dena.
+
+}
+
+add_action('init', 'theme_changes');
