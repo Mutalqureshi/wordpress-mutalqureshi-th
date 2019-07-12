@@ -1,0 +1,27 @@
+first woo commerce ka plugin install karenge.
+product add karenge 
+
+product add krne ke bad product show karayenge
+
+product show karane ke lye uska short code use hoga -->
+
+<?php echo do_shortcode('[products limit="4" columns="4" orderby="id" order="AESC" visibility="visible"]
+'); ?>
+
+is se product show hojyenge -->
+
+cart ka page khud create hojata he woo commerce install krne ke bad!
+
+but hm woo commerce ke advance setting me jakr cart ka page change karenge jis ka name hm rkhenge page-cart.php
+
+<?php echo do_shortcode('[woocommerce_cart]'); ?>
+ phr cart ka shortcode dalenge cart ke functions on hojyenge ese tarha checkout ka page bnayenge jis ka name page-checkout.php
+usme checkout --> ke short code pase karenge
+
+
+single page ka name rkhenge single-product.php
+
+phr woocommere ke plugins ke template se single proudct ka page content utha kr paste krdenge--
+
+
+	

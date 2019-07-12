@@ -1,0 +1,110 @@
+sb se pehle ek file create karenge taxonomy ke name se us me taxonomy ke yeah query paste krenge or name insert karenge !
+
+
+<?php 
+	function custom_taxonomy() {
+		$labels = array(
+		'name'              => _x( 'Clients Category', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Client Category', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Search Clients', 'textdomain' ),
+		'all_items'         => __( 'All Clients', 'textdomain' ),
+		'parent_item'       => __( 'Parent Client', 'textdomain' ),
+
+
+		'parent_item_colon' => __( 'Parent Client:', 'textdomain' ),
+		'edit_item'         => __( 'Edit Client', 'textdomain' ),
+		'update_item'       => __( 'Update Client', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Client Category', 'textdomain' ),
+		'new_item_name'     => __( 'New Client Name', 'textdomain' ),
+		'menu_name'         => __( 'Client Category', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+	);
+
+	register_taxonomy( 'clients_tax', array( 'clients' ), $args );
+	}
+	add_action('init','custom_taxonomy');
+ ?>
+
+phr ese jis pr bnane hoge uspr link karenge ! or insert krne ke bad get krlenge.
+link kuch is tareeqe se karenge ke! jo post type hoge uspr click karenge to uska url me uska jo name hoga use array me daldenge.
+
+------------------------- getting data -----------------------------
+https://stackoverflow.com/questions/25870067/filter-tax-query-in-my-wordpress
+<?php 
+                        $args = array( 
+                          'post_type' => 'client',
+                          'tax_query' => array(
+                          array(
+                            'taxonomy' => 'custom_tax',//taxonomy ka name ayga category ka nhi
+                            'field'    => 'top_clients',//category slug call hoga
+                            'terms'    => array( '2' ),--> yeah hmare url_bar me 
+                          )
+                        ),
+                          'status'=>'publish'
+                        );
+<!-------------------------------------------> POSt
+                        $the_query = new WP_Query( $args ); 
+
+                        if ($the_query->have_posts() ) {
+                          while ( $the_query ->have_posts() ) {
+                            $the_query->the_post();
+                            $image = get_the_post_thumbnail_url();
+                          ?>
+   <!---------------------------------->
+                        <?php 
+                           }
+
+                        }
+                         ?>
+
+
+//how to get all texonomy in one loop.
+
+
+					$terms = get_terms(array(
+						'taxonomy' => 'cars_tax',
+						'hide_empty' => false
+					));
+
+// full code with loop
+
+s = get_terms(array(
+						'taxonomy' => 'cars_tax',
+						'hide_empty' => false
+					));
+                       foreach($terms as $term){
+                       		$termid = $term->term_id;
+                       		// echo $termid;
+                       		$args = array( 
+	                          'post_type' => 'cars',
+	                          'tax_query' => array(
+		                          array(
+		                            'taxonomy' => 'cars_tax',
+		                            'terms'    => array($termid),// yeah hmare url_bar me 
+		                          ),
+
+	                        ),
+	                          'status'=>'publish'
+	                        );
+	                     
+	                        $the_query = new WP_Query( $args );
+	                        if ($the_query->have_posts()){
+	                          while($the_query ->have_posts()){
+
+	                            	$the_query->the_post();
+	                            	// echo the_title();
+	                            	
+                       ?>
+                       <li><img src="<?=  get_the_post_thumbnail_url();?>" alt="" width="300px"></li>
+                       <?php 		
+                       			}
+                       		}
+                       	}
+                        ?>

@@ -1,8 +1,0 @@
-Advance custome field plugin !
-
-
-NAME ACF download
-
-and how to get --
-
-the_field('field_name');

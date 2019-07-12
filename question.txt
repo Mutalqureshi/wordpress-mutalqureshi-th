@@ -1,0 +1,26 @@
+job interview question 
+
+ktne file hona must he 
+ans 3
+
+Q / what is get_template_directory?\
+ans pore route folder ka link 
+
+or css call karane ke lye 
+get_stylesheet directory 
+
+Q / add action kis kam ata he??
+Ans Add action basically cheezo ko kholne ke kame atta he.
+jese ke jo cheez bnd ho use call karane ke lye ya kholne k lye 
+
+Q/
+--------------------------------------- jese codeigniter me base_URL hota he.
+
+post type -- > 
+		google karenge how to register posttype 
+
+
+taxonomy -->  
+
+
+how to create a post type -->

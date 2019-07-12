@@ -1,0 +1,28 @@
+all file route folder me rakhenge !
+or index ko break krdenge header alg footer alg ! 
+
+and index me get_header(); php ->echo->get_header
+or get_footer
+ 
+header or footer me wp_head call krana lazmi he nhi to customize option  show nh honge
+wp_footer		
+
+krenge!
+
+include karane se bhe kam ho jye ga mgr include karane ke zroort nhi
+---------------------------------------------
+languate ke jga hm
+<html <?php language_attributes(); ?>>
+ye lekhenge take wordpress install krte wqt jo laguage select ho wo yha bhe hojye
+
+---------------------------------------------
+image ka link dene ke lye !
+
+<link href="<?= get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+7:53 AM 6/18/20197:42 AM 6/18/20197:43 AM 6/18/2019sb files ke agy yeah lage ga..
+
+php echo get_template_directory_uri(); jese codeigneter me base_url();
+lagate he!
+
+---------------------------------------------
+ or stylesheet ke connect krwate wqt likhenge ge get_style_sheet_directory

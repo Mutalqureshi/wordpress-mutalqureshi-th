@@ -1,0 +1,8 @@
+page.php
+index.php
+page-first-page.php
+front-page.php // yeah name hmara fix he or yeah he hmara home page hoga agr yeah nhi hoga tw wo page pr jyega or wo nhi hoga tw uske slug wale page pr jyga or wo bhe nhi hoga tw phr index ke page pr jyga...
+-----------------------------------------------------------
+how to set a home page // 
+
+setting pr click kare usme reading pr jye waha se home page select krlenge..
